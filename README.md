@@ -1,3 +1,1 @@
-# SISTEM INFORMASI SKRIPSI DAN TUGAS AKHIR AKUNTANSI
-
-
+# Sistem Perpustakaan Online dan Offline
