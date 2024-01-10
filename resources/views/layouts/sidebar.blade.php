@@ -19,22 +19,22 @@
                     <i class="fas fa-poll-h"></i><span>Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item dropdown {{ request()->is('*buku', '*buku/create') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ request()->is('buku', 'buku/create*') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-book"></i><span>Buku</span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link {{ request()->is('*buku/create') ? 'text-primary' : '' }}"
+                        <a class="nav-link {{ request()->is('buku/create*') ? 'text-primary' : '' }}"
                             href="{{ route('buku.create') }}">Tambah Buku</a>
                     </li>
                     <li>
-                        <a class="nav-link {{ request()->is('*buku') ? 'text-primary' : '' }}"
+                        <a class="nav-link {{ request()->is('buku') ? 'text-primary' : '' }}"
                             href="{{ route('buku.index') }}">Daftar Buku</a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown {{ request()->is('*peminjaman', '*peminjaman/create') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ request()->is('peminjaman', '*peminjaman/create') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-list"></i><span>Peminjaman</span>
                 </a>
@@ -44,18 +44,18 @@
                             href="{{ route('peminjaman.create') }}">Tambah Peminjaman</a>
                     </li>
                     <li>
-                        <a class="nav-link {{ request()->is('*peminjaman') ? 'text-primary' : '' }}"
+                        <a class="nav-link {{ request()->is('peminjaman') ? 'text-primary' : '' }}"
                             href="{{ route('peminjaman.index') }}">Daftar Peminjaman</a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item dropdown {{ request()->is('*pengguna', '*pengguna/create') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ request()->is('pengguna', '*pengguna/create') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-users"></i><span>Pengguna</span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link {{ request()->is('*pengguna') ? 'text-primary' : '' }}"
+                        <a class="nav-link {{ request()->is('pengguna') ? 'text-primary' : '' }}"
                             href="{{ route('pengguna.index') }}">Daftar Pengguna</a>
                     </li>
                 </ul>

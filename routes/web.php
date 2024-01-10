@@ -10,6 +10,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PeminjamanUserController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CetakController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,6 +89,18 @@ Route::middleware('can:admin')->group(function () {
         'update' => 'pengguna.update',
         'destroy' => 'pengguna.destroy',
     ])->except(['store']);
+
+    // Laporan
+    Route::get('list_buku', [CetakController::class, 'laporan_buku'])->name('list_buku');
+    Route::get('list_pengguna', [CetakController::class, 'laporan_pengguna'])->name('list_pengguna');
+    Route::get('list_peminjaman', [CetakController::class, 'laporan_peminjaman'])->name('list_peminjaman');
+
+    // Cetak Laporan
+    Route::prefix('cetak')->name('cetak.')->group(function () {
+        Route::get('buku', [CetakController::class, 'cetak_buku'])->name('buku');
+        Route::get('pengguna', [CetakController::class, 'cetak_pengguna'])->name('pengguna');
+        Route::get('peminjaman', [CetakController::class, 'cetak_peminjaman'])->name('peminjaman');
+    });
 });
 
 Route::middleware('can:user')->group(function () {
